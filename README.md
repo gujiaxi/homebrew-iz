@@ -1,2 +1,13 @@
 # homebrew-tap
-Homebrew formulae made by Isaac.
+
+Homebrew formulas made by Isaac.
+
+## How to use
+
+```
+brew tap gujiaxi/tap
+```
+
+## Formulae
+
+- `ydcv`: YouDao Console Version. https://github.com/felixonmars/ydcv
