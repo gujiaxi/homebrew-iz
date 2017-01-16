@@ -9,7 +9,6 @@ class Ydcv < Formula
   sha256 "2d9f6309bbf2d35c0c34c5ee945cf40769cc8201e6f374fa2a4f2d4b827fbdbb"
   head "https://github.com/felixonmars/ydcv", :using => :git
 
-  # depends_on "cmake" => :build
   depends_on :python => :recommended
   depends_on :python3 => :opional
 
