@@ -7,15 +7,16 @@ class Libmobi < Formula
   bottle do
     root_url "https://github.com/gujiaxi/homebrew-iz/raw/master/bottles"
     cellar :any_skip_relocation
-    sha256 "5be571fbfbf68a3cba88a59b1e086bf5ac1f7120d36d3706097e877178dd3cf8"
+    sha256 "5be571fbfbf68a3cba88a59b1e086bf5ac1f7120d36d3706097e877178dd3cf8" => :sierra
+    sha256 "5be571fbfbf68a3cba88a59b1e086bf5ac1f7120d36d3706097e877178dd3cf8" => :el_capitan
+    sha256 "5be571fbfbf68a3cba88a59b1e086bf5ac1f7120d36d3706097e877178dd3cf8" => :yosemite
   end
 
   depends_on "automake" => :build
 
   def install
     system "./autogen.sh"
-    system "./configure", "--prefix=#{prefix}",
-                          "--mandir=#{man}"
+    system "./configure", "--prefix=#{prefix}", "--mandir=#{man}"
     system "make"
     system "make", "install"
   end
