@@ -1,8 +1,16 @@
 class Libmobi < Formula
   desc "C library for handling Kindle (MOBI) formats of ebook documents"
   homepage "https://github.com/bfabiszewski/libmobi"
-  url "https://github.com/bfabiszewski/libmobi/archive/v0.3.tar.gz"
-  sha256 "2146edd490acfa03e58bc81f5d4de610b07729a3e8fdc327df360cbf319bbd86"
+  url "https://github.com/bfabiszewski/libmobi/archive/public.zip"
+  sha256 "dea42cdf3687204579a132029f64e0ea015c018a7a803562767b6c93323ff093"
+
+  bottle do
+    root_url "https://github.com/gujiaxi/homebrew-iz/raw/master/bottles"
+    cellar :any_skip_relocation
+    sha256 "5be571fbfbf68a3cba88a59b1e086bf5ac1f7120d36d3706097e877178dd3cf8"
+  end
+
+  depends_on "automake" => :build
 
   def install
     system "./autogen.sh"
