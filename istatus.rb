@@ -1,9 +1,9 @@
 class Istatus < Formula
   desc "A gadget to show system information of macOS."
   homepage "https://github.com/gujiaxi/iStatus"
-  url "https://github.com/gujiaxi/iStatus/archive/master.zip"
+  url "https://github.com/gujiaxi/iStatus/archive/v0.1.tar.gz"
   version "0.1"
-  sha256 "2b942db188d989945e3cff600fca587fb63a30068118e5d653b7033ad3405635"
+  sha256 "ea1ced5bf2987496a3593d8215ec0d669afacd698ce7140cf6252a7f2c8b7eac"
 
   def install
     system "make"
