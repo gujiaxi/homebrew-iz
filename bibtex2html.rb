@@ -9,8 +9,6 @@ class Bibtex2html < Formula
     root_url "https://github.com/gujiaxi/homebrew-iz/raw/master/bottles"
     cellar :any_skip_relocation
     sha256 "6a3e155794791b00aae19b7194da3aa39c8b4a6f5e7a19c78e9ca116dcdd2809" => :sierra
-    sha256 "30f1cc89cd5ae6889a67b6aed5131d638c1e3f4e4dc1eabd785d39dd0597f9bd" => :el_capitan
-    sha256 "ed271bcd54d5d71ea30c72d661445c4c32ca43fe7d5412c980bf7b6b43aa7bb2" => :yosemite
   end
 
   depends_on "ocaml" => :build
