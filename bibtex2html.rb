@@ -11,8 +11,8 @@ class Bibtex2html < Formula
     sha256 "6a3e155794791b00aae19b7194da3aa39c8b4a6f5e7a19c78e9ca116dcdd2809" => :high_sierra
   end
 
-  depends_on "ocaml" => :build
-  depends_on "hevea" => :build
+  #depends_on "ocaml" => :build
+  #depends_on "hevea" => :build
 
   def install
     # See: https://trac.macports.org/ticket/26724
