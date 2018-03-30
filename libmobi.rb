@@ -8,7 +8,7 @@ class Libmobi < Formula
   bottle do
     root_url "https://github.com/gujiaxi/homebrew-iz/raw/master/bottles"
     cellar :any_skip_relocation
-    sha256 "ef75907890114af4d9343bff7e496ed93cc774718f27ce2b47288a30e35187f0" => :sierra
+    sha256 "ef75907890114af4d9343bff7e496ed93cc774718f27ce2b47288a30e35187f0" => :high_sierra
   end
 
   depends_on "automake" => :build
