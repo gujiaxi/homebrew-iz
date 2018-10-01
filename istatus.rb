@@ -3,7 +3,7 @@ class Istatus < Formula
   homepage "https://github.com/gujiaxi/iStatus"
   url "https://github.com/gujiaxi/iStatus/archive/v0.4.tar.gz"
   version "0.4"
-  sha256 "47c88efdb743f73fbc08c7386552f7cf5544aac5bf90967a123cf2018c2fe342"
+  sha256 "32a1c5ffbbed48949316dd1ec86e32cfa9740e5113b40dc469632062a732d106"
 
   def install
     system "make"
