@@ -4,6 +4,12 @@ class Opencv < Formula
   url "https://github.com/opencv/opencv/archive/3.4.3.tar.gz"
   sha256 "4eef85759d5450b183459ff216b4c0fa43e87a4f6aa92c8af649f89336f002ec"
 
+  bottle do
+    root_url "https://github.com/gujiaxi/homebrew-bottles/raw/master/"
+    cellar :any_skip_relocation
+    sha256 "6a3e155794791b00aae19b7194da3aa39c8b4a6f5e7a19c78e9ca116dcdd2809" => :mojave
+  end
+
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
   depends_on "ffmpeg"

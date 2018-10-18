@@ -6,7 +6,7 @@ class Bibtex2html < Formula
   revision 1
 
   bottle do
-    root_url "https://github.com/gujiaxi/homebrew-iz/raw/master/bottles"
+    root_url "https://github.com/gujiaxi/homebrew-bottles/raw/master/"
     cellar :any_skip_relocation
     sha256 "6a3e155794791b00aae19b7194da3aa39c8b4a6f5e7a19c78e9ca116dcdd2809" => :mojave
   end
