@@ -12,7 +12,7 @@ class Opencv < Formula
 
   depends_on "cmake" => :build
   depends_on "pkg-config" => :build
-  depends_on "ffmpeg"
+  depends_on "gujiaxi/iz/ffmpeg"
   depends_on "python"
 
   needs :cxx11
