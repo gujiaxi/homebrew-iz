@@ -22,6 +22,12 @@ class Ghostscript < Formula
     sha256 "0eb6f356119f2e49b2563210852e17f57f9dcc5755f350a69a46a0d641a0c401"
   end
 
+  # Patch upstream Bug 700952 (https://bugs.ghostscript.com/show_bug.cgi?id=700988) in ghostscript 9.27
+  patch do
+    url "https://git.ghostscript.com/?p=ghostpdl.git;a=patch;h=06c920713e11"
+    sha256 "15db61d2ca230df92e3b40d717e6baa475b13aa5583c08074f57f2c6f74018cc"
+  end
+
   patch :DATA # Uncomment macOS-specific make vars
 
   def install
