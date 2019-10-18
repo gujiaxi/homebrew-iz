@@ -10,9 +10,8 @@
 class Mutt < Formula
   desc "Mongrel of mail user agents (part elm, pine, mush, mh, etc.)"
   homepage "http://www.mutt.org/"
-  url "https://bitbucket.org/mutt/mutt/downloads/mutt-1.12.1.tar.gz"
-  sha256 "01c565406ec4ffa85db90b45ece2260b25fac3646cc063bbc20a242c6ed4210c"
-  revision 1
+  url "https://bitbucket.org/mutt/mutt/downloads/mutt-1.12.2.tar.gz"
+  sha256 "bc42750ce8237742b9382f2148fc547a8d8601aa4a7cd28c55fe7ca045196882"
 
   head do
     url "https://gitlab.com/muttmua/mutt.git"
@@ -24,9 +23,9 @@ class Mutt < Formula
 
   depends_on "autoconf" => :build
   depends_on "automake" => :build
-  depends_on "openssl"
-  depends_on "gdbm"
   depends_on "gpgme" => :optional
+  depends_on "openssl@1.1"
+  depends_on "gdbm"
 
   conflicts_with "tin",
     :because => "both install mmdf.5 and mbox.5 man pages"
@@ -47,7 +46,7 @@ class Mutt < Formula
       --enable-smtp
       --with-gss
       --with-sasl
-      --with-ssl=#{Formula["openssl"].opt_prefix}
+      --with-ssl=#{Formula["openssl@1.1"].opt_prefix}
     ]
 
     args << "--enable-gpgme" if build.with?("gpgme")
