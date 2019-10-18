@@ -4,7 +4,6 @@ class Aspell < Formula
   url "https://ftp.gnu.org/gnu/aspell/aspell-0.60.8.tar.gz"
   mirror "https://ftpmirror.gnu.org/aspell/aspell-0.60.8.tar.gz"
   sha256 "f9b77e515334a751b2e60daab5db23499e26c9209f5e7b7443b05235ad0226f2"
-  revision 1
 
   # Dictionaries installed by default: en, de, es, fr
   option "without-lang-en", "Do not install en dictionary"
