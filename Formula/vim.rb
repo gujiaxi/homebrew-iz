@@ -1,10 +1,10 @@
+# Modified based on: https://github.com/Homebrew/homebrew-core/blob/35fd17b43cab58504817b2d8d276b3c413d92904/Formula/vim.rb
 class Vim < Formula
-  # adapted based on: https://github.com/Homebrew/homebrew-core/blob/35fd17b43cab58504817b2d8d276b3c413d92904/Formula/vim.rb
   desc "Vi 'workalike' with many additional features"
   homepage "https://www.vim.org/"
   # vim should only be updated every 50 releases on multiples of 50
-  url "https://github.com/vim/vim/archive/v8.1.2150.tar.gz"
-  sha256 "0ab3a2656f3f2a4e9b9834ce2c119aaa6c895847f7df779f3aeaa3e87f974b75"
+  url "https://github.com/vim/vim/archive/v8.2.0.tar.gz"
+  sha256 "da8bfa30853e092242d2c62e047c8bfe591da34c5c59335febeb3db7fbcd064e"
   head "https://github.com/vim/vim.git"
 
   LANGUAGES_OPTIONAL = %w[lua ruby perl].freeze
@@ -16,10 +16,10 @@ class Vim < Formula
   depends_on "perl" => :optional
 
   conflicts_with "ex-vi",
-                 :because => "vim and ex-vi both install bin/ex and bin/view"
+    :because => "vim and ex-vi both install bin/ex and bin/view"
 
   conflicts_with "macvim",
-                 :because => "vim and macvim both install vi* binaries"
+    :because => "vim and macvim both install vi* binaries"
 
   def install
     ENV.prepend_path "PATH", Formula["python"].opt_libexec/"bin"
