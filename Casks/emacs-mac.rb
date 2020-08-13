@@ -1,12 +1,12 @@
 cask 'emacs-mac' do
-  version 'emacs-26.3-z-mac-7.9'
+  version 'emacs-27.1-mac-8.0'
 
   if MacOS.version >= :mojave
-    sha256 '47a4d542bcbdc9d97bbd49d0482e663370e5c584fd43ac6ca7a0fa29625c68da'
-    url 'https://github.com/railwaycat/homebrew-emacsmacport/releases/download/emacs-26.3-mac-7.9/emacs-26.3-mac-7.9-10.14.4.zip'
+    sha256 '6e8c3ee4ffe9fd7f9a2291efbe4e589c23df8ce4b9382d2e8c941e7e902b03ad'
+    url 'https://github.com/railwaycat/homebrew-emacsmacport/releases/download/emacs-27.1-mac-8.0/emacs-27.1-mac-8.0-10.14.6.zip'
   else
-    sha256 '6027df79425f334ff2a2aa943bcafc01f8f3faa5bae2b63fecfa641c963d3045'
-    url 'https://github.com/railwaycat/homebrew-emacsmacport/releases/download/emacs-26.3-mac-7.9/emacs-26.3-mac-7.9-10.13.6.zip'
+    sha256 '9756630322baf73ec45e2e4554c795c317c386fec0dd235736db1d4d5572d024'
+    url 'https://github.com/railwaycat/homebrew-emacsmacport/releases/download/emacs-27.1-mac-8.0/emacs-27.1-mac-8.0-10.13.6.zip'
   end
 
   appcast 'https://github.com/railwaycat/homebrew-emacsmacport/releases.atom'
@@ -23,6 +23,7 @@ cask 'emacs-mac' do
   binary "#{appdir}/Emacs.app/Contents/MacOS/bin/ebrowse"
   binary "#{appdir}/Emacs.app/Contents/MacOS/bin/emacsclient"
   binary "#{appdir}/Emacs.app/Contents/MacOS/bin/etags"
+  binary "#{appdir}/Emacs.app/Contents/Resources/include/emacs-module.h", target: "#{HOMEBREW_PREFIX}/include/emacs-module.h"
 
   zap trash: [
                '~/Library/Caches/org.gnu.Emacs',
