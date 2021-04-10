@@ -7,8 +7,7 @@ class Libmobi < Formula
 
   bottle do
     root_url "https://github.com/gujiaxi/homebrew-bottles/raw/master/"
-    cellar :any_skip_relocation
-    sha256 "ef75907890114af4d9343bff7e496ed93cc774718f27ce2b47288a30e35187f0" => :mojave
+    sha256 cellar: :any_skip_relocation, mojave: "ef75907890114af4d9343bff7e496ed93cc774718f27ce2b47288a30e35187f0"
   end
 
   depends_on "automake" => :build
