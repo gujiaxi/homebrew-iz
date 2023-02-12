@@ -37,54 +37,17 @@ class Isync < Formula
     system "make", "install"
   end
 
-  plist_options :manual => "isync"
-
-  def plist; <<~EOS
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-    <plist version="1.0">
-      <dict>
-        <key>EnvironmentVariables</key>
-        <dict>
-          <key>PATH</key>
-          <string>/usr/bin:/bin:/usr/sbin:/sbin:#{HOMEBREW_PREFIX}/bin</string>
-        </dict>
-        <key>KeepAlive</key>
-        <false/>
-        <key>Label</key>
-        <string>#{plist_name}</string>
-        <key>ProgramArguments</key>
-        <array>
-          <string>#{opt_bin}/mbsync</string>
-          <string>-a</string>
-        </array>
-        <key>StartInterval</key>
-        <integer>300</integer>
-        <key>RunAtLoad</key>
-        <true />
-        <key>StandardErrorPath</key>
-        <string>/dev/null</string>
-        <key>StandardOutPath</key>
-        <string>/dev/null</string>
-      </dict>
-    </plist>
-  EOS
+  service do
+    run [opt_bin/"mbsync", "-a"]
+    run_type :interval
+    interval 300
+    keep_alive false
+    environment_variables PATH: std_service_path_env
+    log_path "/dev/null"
+    error_log_path "/dev/null"
   end
 
   test do
     system bin/"mbsync-get-cert", "duckduckgo.com:443"
   end
 end
-__END__
-diff -pur isync-1.3.1/configure.ac isync-1.3.1-fixed/configure.ac
---- isync-1.3.1/configure.ac	2019-05-28 15:44:13.000000000 +0200
-+++ isync-1.3.1-fixed/configure.ac	2019-09-07 15:39:55.000000000 +0200
-@@ -94,7 +94,7 @@ if test "x$ob_cv_with_ssl" != xno; then
-     sav_LDFLAGS=$LDFLAGS
-     LDFLAGS="$LDFLAGS $SSL_LDFLAGS"
-     AC_CHECK_LIB(dl, dlopen, [LIBDL=-ldl])
--    AC_CHECK_LIB(crypto, CRYPTO_lock, [LIBCRYPTO=-lcrypto])
-+    AC_CHECK_LIB(crypto, HMAC_Update, [LIBCRYPTO=-lcrypto])
-     AC_CHECK_LIB(ssl, SSL_connect,
-                  [SSL_LIBS="-lssl $LIBCRYPTO $LIBDL" have_ssl_paths=yes])
-     LDFLAGS=$sav_LDFLAGS
